@@ -26,4 +26,4 @@ router.route('/h').get(home);
 router.route('/register').post(authcontroller.register);
 
 
-module.exports = router; 
+module.exports = router;

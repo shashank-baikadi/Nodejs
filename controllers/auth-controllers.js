@@ -1,3 +1,4 @@
+const User = require('../models/user-model');
 const home =async (req, res) => {
     try {
         res.send('home ')
@@ -7,13 +8,24 @@ const home =async (req, res) => {
 }  
 
 
-const register =async (req, res) => {
-    try {
-        console.log(req.body)
-        res.send(`welcome to registration page using controllers${req.body} `)
-    } catch (error) {
-   res.status(400).send({message:'page not found'})
-    }
-}
+// const register =async (req, res) => {
+//     try {
+//         const {username}=req.body
+//         console.log(req.body)
+//         res.send(`welcome to registration page using controllers${req.body} `)
+//     } catch (error) {
+//    res.status(400).send({message:'page not found'})
+//     }
+// }
 
+const register = async (req, res) => {
+    try {
+      const { username ,email} = req.body;
+      const user = new User({ username,email });
+      await user.save();
+      res.send(`User ${username} registered successfully`);
+    } catch (error) {
+      res.status(400).send({ message: 'Error registering user' });
+    }
+  };
 module.exports={home,register}
