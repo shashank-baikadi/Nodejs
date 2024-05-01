@@ -9,7 +9,8 @@ const home =async (req, res) => {
 
 const register =async (req, res) => {
     try {
-        res.send('welcome to registration page using controllers ')
+        console.log(req.body)
+        res.send(`welcome to registration page using controllers${req.body} `)
     } catch (error) {
    res.status(400).send({message:'page not found'})
     }

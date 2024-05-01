@@ -23,7 +23,7 @@ router.route('/login').get((req, res) => {
 router.route('/h').get(home);
 
 //http://localhost:3000/api/auth/register
-router.route('/register').get(authcontroller.register);
+router.route('/register').post(authcontroller.register);
 
 
 module.exports = router; 
