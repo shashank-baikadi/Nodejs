@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const upload = require('../models/multerConfig');
 const {home} = require('../controllers/auth-controllers');
 // const { register } = require('../controllers/auth-controllers');
 const authcontroller = require('../controllers/auth-controllers');
@@ -23,7 +24,7 @@ router.route('/login').get((req, res) => {
 router.route('/h').get(home);
 
 //http://localhost:3000/api/auth/register
-router.route('/register').post(authcontroller.register);
+// router.route('/register').post(authcontroller.register);
 
-
+router.route('/register').post(upload.single('photo'), authcontroller.register);
 module.exports = router;

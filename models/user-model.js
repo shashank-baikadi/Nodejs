@@ -10,7 +10,16 @@
         type:String,
         required:true
         
-    }
+    },
+    // image:
+    // {
+    //     data:Buffer,
+    //     contentType:String
+    // }
+    photo: {
+        type: String,
+        required: true
+      }
  })
 
  const User=new mongoose.model('User',userSchema);
