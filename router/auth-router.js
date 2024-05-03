@@ -27,4 +27,8 @@ router.route('/h').get(home);
 // router.route('/register').post(authcontroller.register);
 
 router.route('/register').post(upload.single('photo'), authcontroller.register);
+
+
+
+
 module.exports = router;

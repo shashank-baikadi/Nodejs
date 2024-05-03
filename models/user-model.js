@@ -11,11 +11,7 @@
         required:true
         
     },
-    // image:
-    // {
-    //     data:Buffer,
-    //     contentType:String
-    // }
+ 
     photo: {
         type: String,
         required: true
