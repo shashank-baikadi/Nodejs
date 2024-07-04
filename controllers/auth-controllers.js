@@ -37,10 +37,11 @@ const register = async (req, res) => {
     res.status(201).json({
       username: user.username,
       email: user.email,
-      file: user.photo
+      file: user.photo,
     });
   } catch (error) {
     res.status(400).send({ message: 'Error registering user' });
   }
 };
 module.exports={home,register}
+//add more asynchronous method and export 
